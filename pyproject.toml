@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools","setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "certbundle"
+readme = "README.rst"
+requires-python = ">=3.9"
+keywords = ["operator","bundle","certification"]
+dependencies = [
+    'PyYAML',
+    'importlib-metadata; python_version>="3.9"'
+]
+dynamic = ["version"]
+
+[tool.setuptools.dynamic]
+version = {attr = "certbundle.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["certbundle*"]
+#exclude = ["certbundle.tests"]
